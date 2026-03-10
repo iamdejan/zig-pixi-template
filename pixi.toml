@@ -6,9 +6,9 @@ platforms = ["linux-64", "osx-64", "osx-arm64"]
 version = "0.1.0"
 
 [tasks]
-start = "zig run src/main.zig"
-build = "zig build"
-test = "zig test src/message/message.zig"
+start = "zig build run -Dtarget=x86_64-linux-gnu"
+build = "zig build -Dtarget=x86_64-linux-gnu"
+test = "zig build test -Dtarget=x86_64-linux-gnu"
 fmt = "zig fmt src/"
 lint-ci = "zig fmt --check src/"
 lint-fix = "zig fmt src/"
@@ -16,3 +16,12 @@ lint-fix = "zig fmt src/"
 [dependencies]
 zig = ">=0.15.2,<0.16"
 pre-commit = ">=4.5.1,<5"
+
+[target.linux-64.dependencies]
+gxx_linux-64 = ">=13"
+
+[target.osx-64.dependencies]
+gxx_osx-64 = ">=13"
+
+[target.osx-arm64.dependencies]
+gxx_osx-arm64 = ">=13"
