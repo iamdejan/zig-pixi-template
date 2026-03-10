@@ -8,8 +8,7 @@
 // The pattern: C++ STL -> C ABI wrappers -> Zig wrappers -> Zig idiomatic API
 //
 // Usage:
-//   const stl = @import("stl");
-//   var set = stl.UnorderedSetInt.init(allocator);
+//   var set = stl.UnorderedSetInt.init();
 //   defer set.deinit();
 //
 

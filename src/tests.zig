@@ -35,7 +35,7 @@ test "hello function returns correct greeting" {
 // ============================================================================
 
 test "UnorderedSetInt: insert and contains" {
-    var set = stl.UnorderedSetInt.init(testing.allocator);
+    var set = stl.UnorderedSetInt.init();
     defer set.deinit();
 
     // Insert some values
@@ -59,7 +59,7 @@ test "UnorderedSetInt: insert and contains" {
 }
 
 test "UnorderedSetInt: remove" {
-    var set = stl.UnorderedSetInt.init(testing.allocator);
+    var set = stl.UnorderedSetInt.init();
     defer set.deinit();
 
     try testing.expect(set.insert(5));
@@ -75,7 +75,7 @@ test "UnorderedSetInt: remove" {
 }
 
 test "UnorderedMapIntInt: insert and get" {
-    var map = stl.UnorderedMapIntInt.init(testing.allocator);
+    var map = stl.UnorderedMapIntInt.init();
     defer map.deinit();
 
     // Insert key-value pairs
@@ -100,7 +100,7 @@ test "UnorderedMapIntInt: insert and get" {
 }
 
 test "UnorderedMapIntInt: contains and remove" {
-    var map = stl.UnorderedMapIntInt.init(testing.allocator);
+    var map = stl.UnorderedMapIntInt.init();
     defer map.deinit();
 
     try testing.expect(map.insert(1, 100));
@@ -119,7 +119,7 @@ test "UnorderedMapIntInt: contains and remove" {
 }
 
 test "PriorityQueueInt: push, top, pop" {
-    var pq = stl.PriorityQueueInt.init(testing.allocator);
+    var pq = stl.PriorityQueueInt.init();
     defer pq.deinit();
 
     // Initially empty
@@ -149,7 +149,7 @@ test "PriorityQueueInt: push, top, pop" {
 }
 
 test "PriorityQueueInt: pop on empty doesn't crash" {
-    var pq = stl.PriorityQueueInt.init(testing.allocator);
+    var pq = stl.PriorityQueueInt.init();
     defer pq.deinit();
 
     // Pop on empty should not crash
@@ -161,7 +161,7 @@ test "PriorityQueueInt: pop on empty doesn't crash" {
 }
 
 test "PriorityQueueInt: multiple pushes and pops" {
-    var pq = stl.PriorityQueueInt.init(testing.allocator);
+    var pq = stl.PriorityQueueInt.init();
     defer pq.deinit();
 
     // Push in random order
