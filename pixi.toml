@@ -8,7 +8,7 @@ version = "0.1.0"
 [tasks]
 start = "zig build run -Dtarget=x86_64-linux-gnu"
 build = "zig build -Dtarget=x86_64-linux-gnu"
-test = "zig build test -Dtarget=x86_64-linux-gnu"
+test = "zig build test -Dtarget=x86_64-linux-gnu --summary all"
 fmt = "zig fmt src/"
 lint-ci = "zig fmt --check src/"
 lint-fix = "zig fmt src/"
