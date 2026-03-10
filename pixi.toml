@@ -16,12 +16,3 @@ lint-fix = "zig fmt src/"
 [dependencies]
 zig = ">=0.15.2,<0.16"
 pre-commit = ">=4.5.1,<5"
-
-[target.linux-64.dependencies]
-gxx_linux-64 = ">=13"
-
-[target.osx-64.dependencies]
-gxx_osx-64 = ">=13"
-
-[target.osx-arm64.dependencies]
-gxx_osx-arm64 = ">=13"
