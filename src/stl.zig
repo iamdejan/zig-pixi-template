@@ -28,10 +28,8 @@ pub const UnorderedSetInt = struct {
 
     /// Initializes a new unordered_set
     /// Uses the standard Zig allocator pattern
-    /// @param allocator: Memory allocator (unused in this implementation, kept for API consistency)
     /// @return A new UnorderedSetInt instance - may panic on allocation failure
-    pub fn init(allocator: std.mem.Allocator) Self {
-        _ = allocator; // Reserved for future use
+    pub fn init() Self {
         return Self{ .handle = c.unordered_set_int_create() };
     }
 
@@ -79,10 +77,8 @@ pub const UnorderedMapIntInt = struct {
 
     /// Initializes a new unordered_map
     /// Uses the standard Zig allocator pattern
-    /// @param allocator: Memory allocator (unused in this implementation, kept for API consistency)
     /// @return A new UnorderedMapIntInt instance - may panic on allocation failure
-    pub fn init(allocator: std.mem.Allocator) Self {
-        _ = allocator; // Reserved for future use
+    pub fn init() Self {
         return Self{ .handle = c.unordered_map_int_int_create() };
     }
 
@@ -144,10 +140,8 @@ pub const PriorityQueueInt = struct {
 
     /// Initializes a new priority_queue
     /// Uses the standard Zig allocator pattern
-    /// @param allocator: Memory allocator (unused in this implementation, kept for API consistency)
     /// @return A new PriorityQueueInt instance - may panic on allocation failure
-    pub fn init(allocator: std.mem.Allocator) Self {
-        _ = allocator; // Reserved for future use
+    pub fn init() Self {
         return Self{ .handle = c.priority_queue_int_create() };
     }
 
