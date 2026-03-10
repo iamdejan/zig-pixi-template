@@ -13,6 +13,11 @@ Before running this program, ensure you have the following installed:
    pixi install
    ```
 
+3. **Pre-commit Hooks** - Install the pre-commit hooks to ensure code quality:
+   ```bash
+   pixi run pre-commit install --hook-type pre-push
+   ```
+
 ## Run the Program
 
 Use the following command to build and run the project:

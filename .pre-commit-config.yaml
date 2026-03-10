@@ -1,0 +1,15 @@
+repos:
+  - repo: local
+    hooks:
+      - id: lint-fix
+        name: Fix lint
+        entry: pixi run lint-fix
+        language: system
+        types: [zig]
+        pass_filenames: false
+      - id: build
+        name: Build the program
+        entry: pixi run build
+        language: system
+        types: [zig]
+        pass_filenames: false
