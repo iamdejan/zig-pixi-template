@@ -26,3 +26,5 @@ jobs:
         run: pixi run lint-ci
       - name: Run all unit tests
         run: pixi run test
+      - name: Build
+        run: pixi run build
