@@ -151,7 +151,11 @@ const Status = enum {
 };
 
 const SlowTracker = struct {
-    const SlowestQueue = std.PriorityDequeue(TestInfo, void, compareTiming);
+    const SlowestQueue = std.PriorityDequeue(TestInfo, void, (struct {
+        pub fn compare(_: void, a: TestInfo, b: TestInfo) std.math.Order {
+            return std.math.order(a.ns, b.ns);
+        }
+    }).compare);
     max: usize,
     slowest: SlowestQueue,
     timer: std.time.Timer,
@@ -217,11 +221,6 @@ const SlowTracker = struct {
             const ms = @as(f64, @floatFromInt(info.ns)) / 1_000_000.0;
             Printer.fmt("  {d:.2}ms\t{s}\n", .{ ms, info.name });
         }
-    }
-
-    fn compareTiming(context: void, a: TestInfo, b: TestInfo) std.math.Order {
-        _ = context;
-        return std.math.order(a.ns, b.ns);
     }
 };
 
