@@ -47,7 +47,6 @@ Root/
 │   └── rules/
 │       ├── code_generation.md
 │       └── code_validation.md
-├── .pixi/                  # Pixi specific files
 ├── src/                    # Source code directory
 │   ├── main.zig            # Main entry point
 │   └── message/            # Message package
@@ -80,4 +79,3 @@ This section explains the purpose of each file in the repository:
 |-----------|-------------|
 | [`.github/workflows/`](.github/workflows) | GitHub Actions workflow files for CI/CD pipelines. Contains `pr-pipeline.yaml` for pull request checks and `trunk-pipeline.yaml` for trunk-based development. |
 | [`.kilocode/rules/`](.kilocode/rules) | Kilo Code assistant rules for code generation and validation. Contains guidelines for writing well-documented Zig code. |
-| [`.pixi/`](.pixi) | Pixi-specific internal files and cache directory. |
