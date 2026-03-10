@@ -56,7 +56,7 @@ Root/
 │   ├── main.zig            # Main entry point
 │   ├── tests.zig           # Test aggregation file (re-exports all tests)
 │   ├── stl.zig             # C++ STL wrappers (unordered_set, unordered_map, priority_queue)
-│   ├── test_runner.zig     # Custom test runner (not currently used)
+│   ├── test_runner.zig     # Custom test runner
 │   ├── cpp/                # C++ STL implementation
 │   │   ├── stl_c_wrappers.h    # C ABI header
 │   │   ├── stl_wrappers.cpp    # C++ STL container implementations
@@ -85,7 +85,7 @@ This section explains the purpose of each file in the repository:
 | [`src/main.zig`](src/main.zig) | Main entry point of the application. Demonstrates using C++ STL containers (unordered_set, unordered_map, priority_queue) via Zig wrappers. |
 | [`src/tests.zig`](src/tests.zig) | Test aggregation file that imports modules with tests and re-declares them for test runner discovery. Contains 8 unit tests covering message and STL functionality. |
 | [`src/stl.zig`](src/stl.zig) | Zig wrappers for C++ STL containers. Provides `UnorderedSetInt`, `UnorderedMapIntInt`, and `PriorityQueueInt` structs that wrap C++ STL containers. |
-| [`src/test_runner.zig`](src/test_runner.zig) | Custom test runner with colored output, slow test tracking, and memory leak detection. Currently not used (using default runner). |
+| [`src/test_runner.zig`](src/test_runner.zig) | Custom test runner with colored output, slow test tracking, and memory leak detection. |
 | [`src/cpp/stl_c_wrappers.h`](src/cpp/stl_c_wrappers.h) | Pure C header file providing C ABI for C++ STL containers. Used by Zig's `@cImport`. |
 | [`src/cpp/stl_wrappers.cpp`](src/cpp/stl_wrappers.cpp) | C++ implementation of STL container wrapper functions. Wraps `std::unordered_set`, `std::unordered_map`, and `std::priority_queue`. |
 | [`src/cpp/stl_wrappers.hpp`](src/cpp/stl_wrappers.hpp) | C++ header with original STL container declarations (for reference). |
