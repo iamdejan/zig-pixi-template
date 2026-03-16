@@ -22,7 +22,7 @@ pub fn main() !void {
     std.debug.print("\n=== C++ STL Integration Demo ===\n", .{});
 
     // Use unordered_set (equivalent to std::unordered_set<int>)
-    var set = stl.UnorderedSetInt.init(allocator);
+    var set = stl.UnorderedSetInt.init();
     defer set.deinit();
 
     _ = set.insert(10);
@@ -34,7 +34,7 @@ pub fn main() !void {
     std.debug.print("After removing 20, contains 20: {}\n", .{set.contains(20)});
 
     // Use unordered_map (equivalent to std::unordered_map<int, int>)
-    var map = stl.UnorderedMapIntInt.init(allocator);
+    var map = stl.UnorderedMapIntInt.init();
     defer map.deinit();
 
     _ = map.insert(1, 100);
@@ -45,7 +45,7 @@ pub fn main() !void {
     std.debug.print("Contains key 99: {}\n", .{map.contains(99)});
 
     // Use priority_queue (equivalent to std::priority_queue<int>)
-    var pq = stl.PriorityQueueInt.init(allocator);
+    var pq = stl.PriorityQueueInt.init();
     defer pq.deinit();
 
     pq.push(10);

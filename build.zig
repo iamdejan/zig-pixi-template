@@ -50,6 +50,7 @@ pub fn build(b: *std.Build) void {
         .root = b.path("src/cpp"),
         .files = &.{"stl_wrappers.cpp"},
         .language = .cpp,
+        .flags = &.{ "-std=c++23", "-Wall", "-Wextra", "-Werror", "-Wpedantic" },
     });
     // Add include path for C++ headers
     test_module.addIncludePath(b.path("src/cpp"));
